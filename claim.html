@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Order - PetPlaza.GG</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><h1>PetPlaza.GG</h1></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="claim">
+            <h2>Your Order Has Been Placed!</h2>
+            <p class="claim-message">Thank you for your purchase. Your order has been successfully placed.</p>
+            <div class="order-details">
+                <h3>Order ID: <span id="order-id"></span></h3>
+                <p>Your order will be processed and you will receive it soon.</p>
+                <p><strong>Item Ordered:</strong> Ultra Rare Pet</p>
+                <p><strong>Price:</strong> 500 Robux</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PetPlaza.GG</p>
+        <ul class="social-icons">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Get the order ID from the URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('claim');
+        
+        // Display the order ID in the page
+        document.getElementById('order-id').textContent = orderId;
+    </script>
+</body>
+</html>
