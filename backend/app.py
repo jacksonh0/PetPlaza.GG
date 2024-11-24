@@ -1,26 +1,25 @@
-from fastapi import FastAPI, Request
+import gradio as gr
 from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-import uvicorn
 
-app = FastAPI()
-
-# Load the LLaMA 3.2 model and tokenizer
-model_name = "meta-llama/Llama-3.2-1B"  # Replace with your specific model path on Hugging Face
+# Load LLaMA 3.2 model
+model_name = "meta-llama/Llama-3.2-1B"  # Update this if using a specific variant
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
-@app.post("/chat")
-async def chat(request: Request):
-    data = await request.json()
-    user_input = data.get("message", "")
-    
-    # Generate response
-    inputs = tokenizer(user_input, return_tensors="pt")
+def chatbot(input_text):
+    inputs = tokenizer(input_text, return_tensors="pt")
     outputs = model.generate(inputs["input_ids"], max_length=150, num_return_sequences=1)
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    
-    return {"response": response}
+    return response
+
+# Gradio interface
+interface = gr.Interface(
+    fn=chatbot,
+    inputs="text",
+    outputs="text",
+    title="PetPlaza Chatbot",
+    description="Ask me anything about PetPlaza!"
+)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    interface.launch()
