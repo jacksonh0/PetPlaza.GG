@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Maintenance - PetPlaza</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    .maintenance-container {
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: white;
+      background: #333;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .back-home:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="maintenance-container">
+    <h1>We'll Be Back Soon!</h1>
+    <p>PetPlaza is currently undergoing maintenance to serve you better. Thank you for your patience!</p>
+    <p>If you have any urgent questions, feel free to use the live chat below.</p>
+    <a href="index.html" class="back-home">Back to Home</a>
+  </div>
+  <div class="live-chat">
+    <div class="live-chat-header">Live Chat</div>
+    <div class="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
+  </div>
+  <script src="js/chat.js"></script>
+</body>
+</html>
