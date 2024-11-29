@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/auth.js"></script>
-  <title>Login - PetPlaza</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PetPlaza</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Login</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="signup.html">Sign Up</a>
-    </nav>
-  </header>
-  <main>
-    <button id="login">Login with Auth0</button>
-  </main>
-  <footer>&copy; 2024 PetPlaza. All rights reserved.</footer>
-  <div class="live-chat">
-    <div class="live-chat-header">Live Chat</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Type a message...">
-      <button>Send</button>
+    <div class="login-container">
+        <h1>Login to PetPlaza</h1>
+        <button id="loginButton">Login with Auth0</button>
+        <p>Don't have an account? <a href="register.html">Sign up</a></p>
     </div>
-  </div>
-  <script src="js/chat.js"></script>
+
+    <script>
+        // Initialize Auth0 client
+        const auth0 = await createAuth0Client({
+            domain: 'dev-rowcgr5qgz11vcys.us.auth0.com',
+            client_id: '1eptVb9nSOsdGcb1VB1YvrpyTBI0yxL4'
+        });
+
+        // Handle login
+        document.getElementById('loginButton').addEventListener('click', async () => {
+            await auth0.loginWithRedirect({
+                redirect_uri: window.location.origin + '/callback.html',
+            });
+        });
+    </script>
 </body>
 </html>
