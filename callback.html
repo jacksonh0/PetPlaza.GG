@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Callback - PetPlaza</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js"></script>
+</head>
+<body>
+    <div class="callback-container">
+        <h1>Logging In...</h1>
+        <p>Please wait while we authenticate your session.</p>
+    </div>
+
+    <script>
+        // Initialize Auth0 client
+        const auth0 = await createAuth0Client({
+            domain: 'dev-rowcgr5qgz11vcys.us.auth0.com',
+            client_id: '1eptVb9nSOsdGcb1VB1YvrpyTBI0yxL4'
+        });
+
+        // Handle the redirect callback
+        const query = window.location.search;
+        const result = await auth0.handleRedirectCallback();
+
+        // After login, redirect to home page
+        window.location.href = '/home.html';
+    </script>
+</body>
+</html>
