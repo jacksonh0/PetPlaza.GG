@@ -18,9 +18,9 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 
 // Newsletter Form Validation
-document.querySelector('form').addEventListener('submit', function (e) {
+document.querySelector('form')?.addEventListener('submit', function (e) {
     const emailInput = document.querySelector('input[type="email"]');
-    if (!emailInput.value.includes('@')) {
+    if (emailInput && !emailInput.value.includes('@')) {
         e.preventDefault();
         alert('Please enter a valid email address.');
     }
@@ -73,10 +73,60 @@ const testimonials = document.querySelectorAll('.testimonial');
 const testimonialCount = testimonials.length;
 
 function showNextTestimonial() {
-    testimonials[currentTestimonial].classList.remove('active');
+    testimonials[currentTestimonial]?.classList.remove('active');
     currentTestimonial = (currentTestimonial + 1) % testimonialCount;
-    testimonials[currentTestimonial].classList.add('active');
+    testimonials[currentTestimonial]?.classList.add('active');
 }
 
-setInterval(showNextTestimonial, 5000); // Change every 5 seconds
+// Cart Functionality
+function toggleCart() {
+    const cartPanel = document.getElementById('cart-panel');
+    if (cartPanel.classList.contains('hidden')) {
+        cartPanel.classList.remove('hidden');
+        cartPanel.style.transform = 'translateX(0)';
+    } else {
+        cartPanel.classList.add('hidden');
+        cartPanel.style.transform = 'translateX(100%)';
+    }
+}
 
+let cart = [];
+function addToCart(item) {
+    cart.push(item);
+    document.getElementById('cart-count').textContent = cart.length;
+    renderCartItems();
+}
+
+function renderCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = cart.length
+        ? cart.map(item => `<li>${item.name} - $${item.price}</li>`).join('')
+        : '<li>No items in cart.</li>';
+}
+
+function checkout() {
+    alert('Proceeding to checkout...');
+    cart = [];
+    renderCartItems();
+    document.getElementById('cart-count').textContent = '0';
+}
+
+// Balance Functionality
+let balance = 50.00; // Default balance
+
+function toggleBalance() {
+    const balancePanel = document.getElementById('balance-panel');
+    balancePanel.style.display =
+        balancePanel.style.display === 'block' ? 'none' : 'block';
+}
+
+function topUp() {
+    const amount = parseFloat(prompt('Enter amount to top up:'));
+    if (!isNaN(amount) && amount > 0) {
+        balance += amount;
+        document.getElementById('balance').textContent = `$${balance.toFixed(2)}`;
+        alert(`Balance topped up successfully! New balance: $${balance.toFixed(2)}`);
+    } else {
+        alert('Invalid amount. Please try again.');
+    }
+}
