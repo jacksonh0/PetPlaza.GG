@@ -1,262 +1,56 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-body {
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    font-size: 16px;
-    overflow-x: hidden;
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
-ul {
-    list-style: none;
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-/* Header */
-header {
-    background-color: #1e3a8a; /* Blue */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-header .logo {
-    width: 200px;
-    margin-bottom: 20px;
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-header nav a {
-    color: #fff;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.slide-up {
+    animation: slideUp 1s ease-in-out;
 }
 
-header nav a:hover,
-header nav .active {
-    color: #f97316; /* Orange */
+.slide-in {
+    animation: slideIn 1s ease-out;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #1e3a8a, #f97316); /* Blue to Orange gradient */
-    color: #fff;
-    text-align: center;
-    padding: 80px 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.bounce {
+    animation: bounce 2s infinite;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.pulse {
+    animation: pulse 2s infinite;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+.zoom-in {
+    animation: fadeIn 1s ease-in-out, scaleIn 0.5s ease-in-out;
 }
 
-.hero button {
-    background-color: #f97316; /* Orange */
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.hero button:hover {
-    background-color: #ea580c; /* Darker Orange */
-}
-
-/* Testimonials Section */
-.testimonials {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.testimonials h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.testimonial {
-    margin-bottom: 30px;
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.testimonial h4 {
-    margin-top: 10px;
-    font-weight: 700;
-    color: #1e3a8a; /* Blue */
-}
-
-/* How It Works Section */
-.how-it-works {
-    background-color: #f4f4f9;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.how-it-works h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #1e3a8a;
-}
-
-.how-it-works ol {
-    margin: 0 auto;
-    max-width: 600px;
-    font-size: 1.2rem;
-    text-align: left;
-    line-height: 2;
-}
-
-.how-it-works li {
-    margin-bottom: 20px;
-}
-
-/* FAQ Section */
-.faq {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.faq h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #1e3a8a;
-}
-
-.faq-item {
-    margin-bottom: 30px;
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.faq-item h3 {
-    font-size: 1.5rem;
-    color: #1e3a8a;
-}
-
-/* Legal Section */
-.legal {
-    padding: 50px 20px;
-    background-color: #f4f4f9;
-    text-align: center;
-}
-
-.legal h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #1e3a8a;
-}
-
-.legal p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.legal a {
-    color: #f97316;
-    font-weight: 700;
-}
-
-/* Contact Section */
-.contact {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #1e3a8a;
-}
-
-.contact button {
-    background-color: #f97316; /* Orange */
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact button:hover {
-    background-color: #ea580c; /* Darker Orange */
-}
-
-/* Footer */
-footer {
-    background-color: #1e3a8a; /* Blue */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    margin-bottom: 10px;
-}
-
-footer nav a {
-    color: #fff;
-    margin: 0 15px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-footer nav a:hover {
-    color: #f97316; /* Orange */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .testimonial {
-        font-size: 1rem;
-    }
-
-    .how-it-works ol {
-        font-size: 1rem;
-    }
-
-    .faq-item {
-        font-size: 1rem;
-    }
-
-    .contact button {
-        padding: 10px 20px;
-    }
+.button-hover:hover {
+    background-color: orange;
+    color: white;
+    transform: scale(1.1);
 }
