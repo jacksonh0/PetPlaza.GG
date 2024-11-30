@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f9f7ff, #ffffff);
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header .logo {
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff6347;
+}
+
+nav a.active {
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('https://via.placeholder.com/1920x400') center/cover no-repeat;
+    color: white;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+.hero button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+    background-color: #ff4500;
+}
+
+/* Section Titles */
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+/* Featured Pets */
+.featured-pets, .shop-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff9f9;
+    border-top: 3px solid #ff6347;
+}
+
+.featured-pets .pet-grid, .shop-section .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.pet-card, .item-card {
+    background: #fff;
+    border: 2px solid #ffdfdf;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card img, .item-card img {
+    width: 100px;
+    margin-bottom: 10px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.pet-card:hover, .item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ff4500;
+}
+
+/* Fun Facts */
+.fun-facts {
+    background-color: #f0f8ff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.fun-facts ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #555;
+    animation: slideInFromBottom 1s ease-in-out;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ff6347;
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
