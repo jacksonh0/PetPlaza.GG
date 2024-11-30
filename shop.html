@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - PetPlaza</title>
+    <title>PetPlaza - Shop</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Shop at PetPlaza</h1>
+    <header class="transparent-header">
+        <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/shop" class="active">Shop</a>
+            <a href="/about">About Us</a>
+            <a href="/login">Login</a>
+        </nav>
     </header>
 
-    <main>
-        <div class="shop-item">
-            <h2>Pink Cat R</h2>
-            <p>Price: 500 Robux</p>
-            <button class="add-to-cart" data-item-name="Pink Cat R" data-item-price="500 Robux">Add to Cart</button>
+    <!-- Shop Section -->
+    <section class="shop-section cute-design zoom-in">
+        <h1 class="slide-in">Shop Your Favorites</h1>
+        <div class="item-grid">
+            <div class="item-card slide-up">
+                <img src="https://via.placeholder.com/100" alt="Item 1">
+                <h3>Pink Cat R</h3>
+                <p>Price: $10</p>
+                <button class="button-hover">Add to Cart</button>
+            </div>
+            <div class="item-card slide-up">
+                <img src="https://via.placeholder.com/100" alt="Item 2">
+                <h3>Golden Penguin</h3>
+                <p>Price: $15</p>
+                <button class="button-hover">Add to Cart</button>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <script src="/scripts/shop.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
+        <nav>
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/about">About Us</a>
+        </nav>
+    </footer>
+    <script src="/scripts/scripts.js"></script>
 </body>
 </html>
