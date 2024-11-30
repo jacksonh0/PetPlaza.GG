@@ -3,34 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - PetPlaza</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PetPlaza - Home</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="home-container">
-        <h1>Welcome to PetPlaza!</h1>
-        <p id="userInfo">Loading user information...</p>
-        <p>Balance: <span id="userBalance">0</span></p>
-        <button id="logoutButton">Logout</button>
-    </div>
+    <!-- Header -->
+    <header>
+        <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" width="150">
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/shop">Shop</a>
+            <a href="/about">About Us</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
 
-    <script>
-        const auth0 = await createAuth0Client({
-            domain: 'YOUR_AUTH0_DOMAIN',
-            client_id: 'YOUR_AUTH0_CLIENT_ID'
-        });
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to PetPlaza!</h1>
+            <p>Your ultimate destination for in-game pets and seamless trading experiences.</p>
+            <button onclick="location.href='/shop'">Start Shopping</button>
+        </div>
+    </section>
 
-        // Fetch user info
-        const user = await auth0.getUser();
-        document.getElementById('userInfo').textContent = `Hello, ${user.name}`;
-        document.getElementById('userBalance').textContent = '100'; // Dummy balance for now
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose PetPlaza?</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>Trusted Service</h3>
+                    <p>Over 10,000 happy customers and counting!</p>
+                </div>
+                <div class="card">
+                    <h3>Fast Delivery</h3>
+                    <p>Receive your pets instantly with our automated delivery bot.</p>
+                </div>
+                <div class="card">
+                    <h3>Secure Transactions</h3>
+                    <p>All trades are 100% secure and verified.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Logout
-        document.getElementById('logoutButton').addEventListener('click', async () => {
-            await auth0.logout({
-                returnTo: window.location.origin
-            });
-        });
-    </script>
+    <!-- Testimonials Section -->
+    <section class="testimonials bg-light">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"PetPlaza made trading so easy! I love my Pink Cat R!"</p>
+                <span>- Alex G.</span>
+            </div>
+            <div class="testimonial">
+                <p>"The best in-game marketplace! Super fast and reliable."</p>
+                <span>- Jamie P.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Trading?</h2>
+            <p>Find the perfect in-game pet for your collection today!</p>
+            <button onclick="location.href='/shop'">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Sign up for our newsletter to receive the latest updates and exclusive offers.</p>
+            <form action="/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
+    </footer>
 </body>
 </html>
