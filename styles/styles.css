@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and Container Styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background: #007BFF; /* Primary Blue */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 4px solid #0056b3;
+}
+
+header img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    background-color: #FFA500; /* Accent Orange */
+    color: #007BFF;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #007BFF; /* Primary Blue */
+}
+
+/* Paragraphs */
+p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: #FFA500; /* Accent Orange */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #cc8400; /* Darker Orange */
+}
+
+/* Links */
+a {
+    color: #007BFF; /* Primary Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFA500; /* Accent Orange */
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #007BFF; /* Primary Blue */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero button {
+    background-color: #FFA500; /* Accent Orange */
+}
+
+/* Features Section */
+.features {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.features h2 {
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #007BFF;
+}
+
+.card h3 {
+    color: #007BFF;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #007BFF;
+    color: white;
+    padding: 40px 20px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    font-style: italic;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #FFA500; /* Accent Orange */
+}
+
+/* Call to Action */
+.cta {
+    text-align: center;
+    padding: 40px 20px;
+    background: #FFA500; /* Accent Orange */
+    color: white;
+}
+
+.cta button {
+    background: #0056b3; /* Darker Blue */
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    background-color: #007BFF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .newsletter input[type="email"] {
+        width: 90%;
+    }
+}
