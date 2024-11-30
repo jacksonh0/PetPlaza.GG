@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPlaza - Home</title>
     <link rel="stylesheet" href="/styles/styles.css">
-    <!-- Klaviyo Script Integration -->
-    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RffM7A"></script>
 </head>
 <body>
-    <header>
+    <header class="transparent-header">
         <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
         <nav>
             <a href="/home" class="active">Home</a>
@@ -20,65 +18,39 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to PetPlaza!</h1>
-        <p>Your one-stop shop for Adopt Me! items, pets, and more.</p>
-        <button onclick="location.href='/shop'">Start Shopping</button>
+    <section class="hero cute-design fade-in">
+        <h1 class="slide-in">Welcome to PetPlaza!</h1>
+        <p class="bounce">Discover the cutest Adopt Me! pets and items tailored just for you.</p>
+        <button onclick="location.href='/shop'" class="pulse">Shop Now</button>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial">
-            <p>"PetPlaza is amazing! I got my items in less than 5 minutes. Highly recommend!"</p>
-            <h4>- Alex G.</h4>
-        </div>
-        <div class="testimonial">
-            <p>"Their support team is incredible. They helped me with my first trade seamlessly."</p>
-            <h4>- Bella R.</h4>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <h2>How It Works</h2>
-        <ol>
-            <li>Browse our shop and select the items you want.</li>
-            <li>Place your order and complete the secure payment process.</li>
-            <li>Log in to Adopt Me! and trade with our bot for instant delivery.</li>
-        </ol>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>How fast will I receive my items?</h3>
-            <p>Most items are delivered instantly. If the bot is busy, delivery may take up to 10 minutes.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Is it safe to trade with PetPlaza?</h3>
-            <p>Yes! We use secure trading systems and follow Adopt Me!'s guidelines to ensure a safe experience.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What payment methods do you accept?</h3>
-            <p>We accept various payment methods, including credit/debit cards and digital wallets.</p>
+    <!-- Featured Pets Section -->
+    <section class="featured-pets zoom-in">
+        <h2>Adorable Pets You’ll Love</h2>
+        <div class="pet-grid">
+            <div class="pet-card slide-up">
+                <img src="https://via.placeholder.com/100" alt="Pet 1">
+                <h3>Pink Cat</h3>
+                <p>Price: $10</p>
+                <button class="button-hover">Add to Cart</button>
+            </div>
+            <div class="pet-card slide-up">
+                <img src="https://via.placeholder.com/100" alt="Pet 2">
+                <h3>Golden Penguin</h3>
+                <p>Price: $15</p>
+                <button class="button-hover">Add to Cart</button>
+            </div>
         </div>
     </section>
 
-    <!-- Legal Section -->
-    <section class="legal">
-        <h2>Legal Information</h2>
-        <p>PetPlaza is not affiliated with or endorsed by Adopt Me! or Roblox Corporation. All trademarks are property of their respective owners.</p>
-        <p>By using PetPlaza, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
-        <p>For any legal inquiries, contact us at <a href="mailto:legal@petplaza.gg">legal@petplaza.gg</a>.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Get in Touch</h2>
-        <p>Have questions? Our team is here to help! Reach out to us via email or live chat.</p>
-        <button onclick="location.href='/contact'">Contact Us</button>
+    <!-- Fun Facts Section -->
+    <section class="fun-facts flip">
+        <h2>Did You Know?</h2>
+        <ul>
+            <li>Our Pink Cat is one of the rarest pets!</li>
+            <li>Over 5,000 trades completed successfully every week.</li>
+            <li>We care about your trading experience!</li>
+        </ul>
     </section>
 
     <!-- Footer -->
@@ -90,7 +62,6 @@
             <a href="/about">About Us</a>
         </nav>
     </footer>
-
     <script src="/scripts/scripts.js"></script>
 </body>
 </html>
