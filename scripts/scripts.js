@@ -1,8 +1,5 @@
 // Scripts for PetPlaza website
 
-// Klaviyo Script Integration
-<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RffM7A'></script>
-
 // Smooth Scroll for Internal Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
