@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPlaza - Home</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/scripts.js" defer></script>
 </head>
 <body>
-    <header class="transparent-header">
+    <header>
         <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
         <nav>
             <a href="/home" class="active">Home</a>
@@ -15,53 +16,72 @@
             <a href="/about">About Us</a>
             <a href="/login">Login</a>
         </nav>
+        <div class="header-icons">
+            <div class="balance" onclick="toggleBalance()">
+                💰 <span id="balance">$50.00</span>
+            </div>
+            <div class="cart" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero cute-design fade-in">
-        <h1 class="slide-in">Welcome to PetPlaza!</h1>
-        <p class="bounce">Discover the cutest Adopt Me! pets and items tailored just for you.</p>
-        <button onclick="location.href='/shop'" class="pulse">Shop Now</button>
+    <section class="hero">
+        <h1>Welcome to PetPlaza!</h1>
+        <p>Your one-stop shop for Adopt Me! items, pets, and more.</p>
+        <button onclick="location.href='/shop'">Start Shopping</button>
     </section>
 
-    <!-- Featured Pets Section -->
-    <section class="featured-pets zoom-in">
-        <h2>Adorable Pets You’ll Love</h2>
-        <div class="pet-grid">
-            <div class="pet-card slide-up">
-                <img src="https://via.placeholder.com/100" alt="Pet 1">
-                <h3>Pink Cat</h3>
-                <p>Price: $10</p>
-                <button class="button-hover">Add to Cart</button>
+    <!-- Featured Section -->
+    <section class="featured">
+        <h2>Featured Items</h2>
+        <div class="featured-items">
+            <div class="item">
+                <img src="/images/item1.png" alt="Pink Cat R">
+                <h3>Pink Cat R</h3>
+                <p>$20.00</p>
+                <button onclick="addToCart({ name: 'Pink Cat R', price: 20 })">Add to Cart</button>
             </div>
-            <div class="pet-card slide-up">
-                <img src="https://via.placeholder.com/100" alt="Pet 2">
-                <h3>Golden Penguin</h3>
-                <p>Price: $15</p>
-                <button class="button-hover">Add to Cart</button>
+            <div class="item">
+                <img src="/images/item2.png" alt="Frost Dragon">
+                <h3>Frost Dragon</h3>
+                <p>$30.00</p>
+                <button onclick="addToCart({ name: 'Frost Dragon', price: 30 })">Add to Cart</button>
             </div>
         </div>
     </section>
 
-    <!-- Fun Facts Section -->
-    <section class="fun-facts flip">
-        <h2>Did You Know?</h2>
-        <ul>
-            <li>Our Pink Cat is one of the rarest pets!</li>
-            <li>Over 5,000 trades completed successfully every week.</li>
-            <li>We care about your trading experience!</li>
-        </ul>
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Need Help?</h2>
+        <p>Reach out to us via email or live chat!</p>
+        <button onclick="location.href='/contact'">Contact Us</button>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
         <nav>
             <a href="/terms">Terms of Service</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/about">About Us</a>
         </nav>
     </footer>
-    <script src="/scripts/scripts.js"></script>
+
+    <!-- Cart Panel -->
+    <div id="cart-panel" class="hidden">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <li>No items in cart.</li>
+        </ul>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Balance Panel -->
+    <div id="balance-panel" class="hidden">
+        <h3>Your Balance</h3>
+        <p id="balance-display">$50.00</p>
+        <button onclick="topUp()">Top Up</button>
+    </div>
 </body>
 </html>
