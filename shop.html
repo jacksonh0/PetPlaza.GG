@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPlaza - Shop</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/scripts.js" defer></script>
 </head>
 <body>
-    <header class="transparent-header">
+    <header>
         <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
         <nav>
             <a href="/home">Home</a>
@@ -15,36 +16,64 @@
             <a href="/about">About Us</a>
             <a href="/login">Login</a>
         </nav>
+        <div class="header-icons">
+            <div class="balance" onclick="toggleBalance()">
+                💰 <span id="balance">$50.00</span>
+            </div>
+            <div class="cart" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
     </header>
 
     <!-- Shop Section -->
-    <section class="shop-section cute-design zoom-in">
-        <h1 class="slide-in">Shop Your Favorites</h1>
-        <div class="item-grid">
-            <div class="item-card slide-up">
-                <img src="https://via.placeholder.com/100" alt="Item 1">
+    <section class="shop">
+        <h1>Shop Items</h1>
+        <div class="shop-items">
+            <div class="item">
+                <img src="/images/item1.png" alt="Pink Cat R">
                 <h3>Pink Cat R</h3>
-                <p>Price: $10</p>
-                <button class="button-hover">Add to Cart</button>
+                <p>$20.00</p>
+                <button onclick="addToCart({ name: 'Pink Cat R', price: 20 })">Add to Cart</button>
             </div>
-            <div class="item-card slide-up">
-                <img src="https://via.placeholder.com/100" alt="Item 2">
-                <h3>Golden Penguin</h3>
-                <p>Price: $15</p>
-                <button class="button-hover">Add to Cart</button>
+            <div class="item">
+                <img src="/images/item2.png" alt="Frost Dragon">
+                <h3>Frost Dragon</h3>
+                <p>$30.00</p>
+                <button onclick="addToCart({ name: 'Frost Dragon', price: 30 })">Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="/images/item3.png" alt="Golden Unicorn">
+                <h3>Golden Unicorn</h3>
+                <p>$50.00</p>
+                <button onclick="addToCart({ name: 'Golden Unicorn', price: 50 })">Add to Cart</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
         <nav>
             <a href="/terms">Terms of Service</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/about">About Us</a>
         </nav>
     </footer>
-    <script src="/scripts/scripts.js"></script>
+
+    <!-- Cart Panel -->
+    <div id="cart-panel" class="hidden">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <li>No items in cart.</li>
+        </ul>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Balance Panel -->
+    <div id="balance-panel" class="hidden">
+        <h3>Your Balance</h3>
+        <p id="balance-display">$50.00</p>
+        <button onclick="topUp()">Top Up</button>
+    </div>
 </body>
 </html>
