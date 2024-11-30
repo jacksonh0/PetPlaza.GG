@@ -1,5 +1,8 @@
 // Scripts for PetPlaza website
 
+// Klaviyo Script Integration
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RffM7A'></script>
+
 // Smooth Scroll for Internal Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -70,10 +73,13 @@ document.querySelector('footer').innerHTML += `
 // Testimonial Carousel (if you have multiple testimonials)
 let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial');
-if (testimonials.length > 1) {
-    setInterval(() => {
-        testimonials[currentTestimonial].style.display = 'none';
-        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        testimonials[currentTestimonial].style.display = 'block';
-    }, 5000);
+const testimonialCount = testimonials.length;
+
+function showNextTestimonial() {
+    testimonials[currentTestimonial].classList.remove('active');
+    currentTestimonial = (currentTestimonial + 1) % testimonialCount;
+    testimonials[currentTestimonial].classList.add('active');
 }
+
+setInterval(showNextTestimonial, 5000); // Change every 5 seconds
+
