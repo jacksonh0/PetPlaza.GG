@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up - PetPlaza</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="PetPlaza Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="topup.html" class="active">Top Up</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <div class="cart-icon" onclick="toggleCart()">
+                <span>🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="topup-container">
+        <section class="hero">
+            <h1>Top Up Your Balance</h1>
+            <p>Easily add funds to your account using GameMoney!</p>
+        </section>
+
+        <section class="topup-options">
+            <div class="instruction">
+                <h2>How it Works</h2>
+                <ol>
+                    <li>Enter the amount you'd like to top up.</li>
+                    <li>Click the "Top Up Now" button below.</li>
+                    <li>You'll be redirected to GameMoney to complete the process.</li>
+                </ol>
+            </div>
+            <form action="https://gamemoney.com/payment" method="GET" target="_blank">
+                <label for="amount">Enter Amount:</label>
+                <input type="number" id="amount" name="amount" placeholder="e.g., 20" required>
+                <button type="submit" class="cta">Top Up Now</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
