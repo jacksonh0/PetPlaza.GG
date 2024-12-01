@@ -114,14 +114,14 @@ function checkout() {
 }
 
 // Balance Functionality
-let balance = 50.00; // Default balance
+let balance = 0.00; // Default balance
 
 function updateBalanceDisplay() {
     document.getElementById('balance').textContent = balance.toFixed(2);
 }
 
 function topUp() {
-    location.href = '/topup.html'; // Redirect to GameMoney integration
+    location.href = '/topup'; // Redirect to GameMoney integration
 }
 
 // Initialize balance display
