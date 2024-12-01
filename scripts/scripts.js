@@ -1,5 +1,10 @@
 // Scripts for PetPlaza website
 
+// Console Warning
+console.warn(
+    "STOP! THIS IS A WARNING, COPYING ANYTHING FROM HERE, AND GIVING IT TO ANYONE, GIVES ANYONE ACCESS TO YOUR PETPLAZA ACCOUNT."
+);
+
 // Smooth Scroll for Internal Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
