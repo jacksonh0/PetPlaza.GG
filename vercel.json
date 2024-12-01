@@ -1,12 +1,19 @@
 {
-    "rewrites": [
-        { "source": "/home", "destination": "/index.html" },
-        { "source": "/shop", "destination": "/shop.html" },
-        { "source": "/about", "destination": "/about.html" },
-        { "source": "/login", "destination": "/login.html" },
-        { "source": "/privacy", "destination": "/privacy.html" },
-        { "source": "/terms", "destination": "/terms.html" },
-        { "source": "/(.*)", "destination": "/404.html" },
-        { "source": "/topup", "destination": "/topup.html" }
-    ]
+  "version": 2,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/shop", "dest": "/shop.html" },
+    { "src": "/topup", "dest": "/topup.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/404", "dest": "/404.html" },
+    { "src": "/maintenance", "dest": "/maintenance.html" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ],
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/shop.html", "destination": "/shop" },
+    { "source": "/topup.html", "destination": "/topup" },
+    { "source": "/about.html", "destination": "/about" },
+    { "source": "/maintenance.html", "destination": "/maintenance" }
+  ]
 }
