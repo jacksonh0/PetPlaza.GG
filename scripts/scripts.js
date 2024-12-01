@@ -79,54 +79,50 @@ function showNextTestimonial() {
 }
 
 // Cart Functionality
+let cart = [];
 function toggleCart() {
-    const cartPanel = document.getElementById('cart-panel');
-    if (cartPanel.classList.contains('hidden')) {
-        cartPanel.classList.remove('hidden');
-        cartPanel.style.transform = 'translateX(0)';
+    const cartPanel = document.getElementById('cart-overlay');
+    if (cartPanel.classList.contains('active')) {
+        cartPanel.classList.remove('active');
     } else {
-        cartPanel.classList.add('hidden');
-        cartPanel.style.transform = 'translateX(100%)';
+        cartPanel.classList.add('active');
     }
 }
 
-let cart = [];
-function addToCart(item) {
-    cart.push(item);
-    document.getElementById('cart-count').textContent = cart.length;
-    renderCartItems();
+function addToCart(itemName, itemPrice) {
+    cart.push({ name: itemName, price: itemPrice });
+    updateCartUI();
 }
 
-function renderCartItems() {
+function updateCartUI() {
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = cart.length
-        ? cart.map(item => `<li>${item.name} - $${item.price}</li>`).join('')
-        : '<li>No items in cart.</li>';
+        ? cart.map(item => `<p>${item.name} - $${item.price.toFixed(2)}</p>`).join('')
+        : '<p>Your cart is empty!</p>';
+    document.getElementById('cart-count').textContent = cart.length;
 }
 
 function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+    }
     alert('Proceeding to checkout...');
     cart = [];
-    renderCartItems();
+    updateCartUI();
     document.getElementById('cart-count').textContent = '0';
 }
 
 // Balance Functionality
 let balance = 50.00; // Default balance
 
-function toggleBalance() {
-    const balancePanel = document.getElementById('balance-panel');
-    balancePanel.style.display =
-        balancePanel.style.display === 'block' ? 'none' : 'block';
+function updateBalanceDisplay() {
+    document.getElementById('balance').textContent = balance.toFixed(2);
 }
 
 function topUp() {
-    const amount = parseFloat(prompt('Enter amount to top up:'));
-    if (!isNaN(amount) && amount > 0) {
-        balance += amount;
-        document.getElementById('balance').textContent = `$${balance.toFixed(2)}`;
-        alert(`Balance topped up successfully! New balance: $${balance.toFixed(2)}`);
-    } else {
-        alert('Invalid amount. Please try again.');
-    }
+    location.href = '/topup.html'; // Redirect to GameMoney integration
 }
+
+// Initialize balance display
+updateBalanceDisplay();
