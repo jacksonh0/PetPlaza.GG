@@ -5,125 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPlaza - Home</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/scripts.js" defer></script>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa1zY+V1u8YoDxV8tWTz4guhG+6PaYZhA/M9A6pR8Lk5qGpG1jJ63u9P9xg" crossorigin="anonymous">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav>
+    <header class="bg-light py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
             <div class="logo">
-                <img src="assets/logo.png" alt="PetPlaza Logo">
+                <img src="assets/logo.png" alt="PetPlaza Logo" class="img-fluid" style="max-height: 50px;">
             </div>
-            <ul class="nav-links">
-                <li><a href="/home" class="active">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="icons">
-                <div class="balance" onclick="topUp()">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="/home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="/shop" class="nav-link">Shop</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="d-flex align-items-center">
+                <div class="balance me-3" onclick="topUp()">
                     <span>💰</span> <span id="balance">0.00</span>
                 </div>
                 <div class="cart-icon" onclick="toggleCart()">
                     🛒 <span id="cart-count">0</span>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Welcome to PetPlaza!</h1>
-            <p>Your one-stop shop for all things adorable. Shop for exclusive in-game pets and items today!</p>
-            <a href="shop.html" class="cta">Shop Now</a>
-        </div>
-        <div class="hero-image">
-            <img src="assets/hero-image.png" alt="Cute Pets">
+    <section class="hero bg-primary text-white py-5">
+        <div class="container d-flex flex-column-reverse flex-md-row align-items-center justify-content-between">
+            <div class="hero-text text-center text-md-start">
+                <h1>Welcome to PetPlaza!</h1>
+                <p class="lead">Your one-stop shop for all things adorable. Shop for exclusive in-game pets and items today!</p>
+                <a href="shop.html" class="btn btn-warning btn-lg">Shop Now</a>
+            </div>
+            <div class="hero-image text-center">
+                <img src="assets/hero-image.png" alt="Cute Pets" class="img-fluid" style="max-height: 300px;">
+            </div>
         </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="featured-products">
-        <h2>Featured Pets</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="assets/pink-cat.png" alt="Pink Cat">
-                <h3>Pink Cat</h3>
-                <p>$10.00</p>
-                <button onclick="addToCart('Pink Cat', 10)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="assets/golden-dog.png" alt="Golden Dog">
-                <h3>Golden Dog</h3>
-                <p>$15.00</p>
-                <button onclick="addToCart('Golden Dog', 15)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="assets/blue-bird.png" alt="Blue Bird">
-                <h3>Blue Bird</h3>
-                <p>$12.00</p>
-                <button onclick="addToCart('Blue Bird', 12)">Add to Cart</button>
+    <section class="featured-products py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Pets</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/pink-cat.png" class="card-img-top" alt="Pink Cat">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Pink Cat</h3>
+                            <p class="card-text">$10.00</p>
+                            <button class="btn btn-primary" onclick="addToCart('Pink Cat', 10)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/golden-dog.png" class="card-img-top" alt="Golden Dog">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Golden Dog</h3>
+                            <p class="card-text">$15.00</p>
+                            <button class="btn btn-primary" onclick="addToCart('Golden Dog', 15)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/blue-bird.png" class="card-img-top" alt="Blue Bird">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Blue Bird</h3>
+                            <p class="card-text">$12.00</p>
+                            <button class="btn btn-primary" onclick="addToCart('Blue Bird', 12)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <h2>About PetPlaza</h2>
-        <p>
-            At PetPlaza, we bring joy to gamers by offering a wide selection of in-game pets, items, and
-            currencies. Join our community of gamers and animal lovers today!
-        </p>
-        <img src="assets/about-image.png" alt="About Us">
+    <section id="about" class="about-section py-5 bg-light">
+        <div class="container text-center">
+            <h2>About PetPlaza</h2>
+            <p class="lead">
+                At PetPlaza, we bring joy to gamers by offering a wide selection of in-game pets, items, and
+                currencies. Join our community of gamers and animal lovers today!
+            </p>
+            <img src="assets/about-image.png" alt="About Us" class="img-fluid" style="max-height: 300px;">
+        </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial">
-            <p>“The cutest pets ever! My daughter loves her Pink Cat. Highly recommend PetPlaza!”</p>
-            <strong>– Sarah</strong>
-        </div>
-        <div class="testimonial">
-            <p>“Easy process and great customer support. My pet collection has grown so much!”</p>
-            <strong>– Mike</strong>
+    <section class="testimonials py-5">
+        <div class="container text-center">
+            <h2>What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <p>“The cutest pets ever! My daughter loves her Pink Cat. Highly recommend PetPlaza!”</p>
+                        <strong>– Sarah</strong>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <p>“Easy process and great customer support. My pet collection has grown so much!”</p>
+                        <strong>– Mike</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq">
-            <h3>How do I receive my purchased items?</h3>
-            <p>Items are delivered to your account via our in-game trade bot. It’s fast and secure!</p>
+    <section id="faq" class="faq-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How do I receive my purchased items?
+                        </button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Items are delivered to your account via our in-game trade bot. It’s fast and secure!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What payment methods are accepted?
+                        </button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We accept all major credit cards and online payment platforms.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq">
-            <h3>What payment methods are accepted?</h3>
-            <p>We accept all major credit cards and online payment platforms.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us via email at <a href="mailto:support@petplaza.gg">support@petplaza.gg</a>.</p>
-        <img src="assets/contact-image.png" alt="Contact Us">
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 PetPlaza. All rights reserved.</p>
     </footer>
 
-    <!-- Cart Sidebar -->
-    <div id="cart-overlay" class="cart-overlay hidden">
-        <div class="cart-content">
-            <h2>Your Cart</h2>
-            <div id="cart-items"></div>
-            <button onclick="checkout()">Checkout</button>
-        </div>
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-qY6a95Fcf0f7TQ9qEsFB4URFcwhpebUIbWQUYhyqubCynx0ASmF3gMJq7RsO7px9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA7HepYVjhH5RR9pbH4d6ZLF5F/7xQp1phtCTAPKaDOjm8" crossorigin="anonymous"></script>
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
