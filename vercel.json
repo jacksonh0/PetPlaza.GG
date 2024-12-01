@@ -5,8 +5,7 @@
     { "source": "/shop.html", "destination": "/shop", "permanent": true },
     { "source": "/topup.html", "destination": "/topup", "permanent": true },
     { "source": "/about.html", "destination": "/about", "permanent": true },
-    { "source": "/maintenance.html", "destination": "/maintenance", "permanent": true },
-    { "source": "/index.html", "destination": "/home", "permanent": true }
+    { "source": "/maintenance.html", "destination": "/maintenance", "permanent": true }
   ],
   "trailingSlash": false
 }
