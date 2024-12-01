@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
         <nav>
             <a href="/home" class="active">Home</a>
@@ -26,20 +26,81 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Welcome to PetPlaza!</h1>
-            <p>Your one-stop shop for Adopt Me! items, pets, and more.</p>
-            <button onclick="location.href='/shop'">Start Shopping</button>
+            <div class="hero-content">
+                <h1>Welcome to PetPlaza!</h1>
+                <p>Your one-stop shop for all things *Adopt Me!* Discover the cutest pets and magical items today!</p>
+                <button class="cta-btn" onclick="location.href='/shop'">Explore Shop</button>
+            </div>
+            <div class="hero-image">
+                <img src="/images/hero-pets.png" alt="Cute Pets">
+            </div>
         </section>
+
+        <!-- Features Section -->
         <section class="features">
-            <h2>Why Choose Us?</h2>
-            <div class="feature">🚚 Instant Delivery</div>
-            <div class="feature">🔒 Secure Transactions</div>
-            <div class="feature">🌟 Trusted by Players</div>
+            <h2>Why Choose PetPlaza?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <img src="/images/fast-delivery.png" alt="Fast Delivery">
+                    <h3>Fast Delivery</h3>
+                    <p>Get your items instantly in-game with our automated bot.</p>
+                </div>
+                <div class="feature">
+                    <img src="/images/secure-payments.png" alt="Secure Payments">
+                    <h3>Secure Payments</h3>
+                    <p>Shop confidently with our trusted payment system.</p>
+                </div>
+                <div class="feature">
+                    <img src="/images/community.png" alt="Trusted Community">
+                    <h3>Player Approved</h3>
+                    <p>Join thousands of happy Adopt Me! players.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Items -->
+        <section class="popular-items">
+            <h2>Popular Picks</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <img src="/images/pink-cat.png" alt="Pink Cat">
+                    <h3>Pink Cat</h3>
+                    <p>$9.99</p>
+                    <button onclick="addToCart('Pink Cat', 9.99)">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="/images/blue-dog.png" alt="Blue Dog">
+                    <h3>Blue Dog</h3>
+                    <p>$7.99</p>
+                    <button onclick="addToCart('Blue Dog', 7.99)">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="/images/golden-dragon.png" alt="Golden Dragon">
+                    <h3>Golden Dragon</h3>
+                    <p>$19.99</p>
+                    <button onclick="addToCart('Golden Dragon', 19.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2>What Players Say</h2>
+            <div class="testimonial">
+                <p>"PetPlaza made getting my dream pet so easy! Love it!"</p>
+                <span>- Amy L.</span>
+            </div>
+            <div class="testimonial">
+                <p>"The delivery bot is super quick! Highly recommend."</p>
+                <span>- James D.</span>
+            </div>
         </section>
     </main>
 
-    <div class="cart-overlay">
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay">
         <div class="cart-content">
             <h2>Your Cart</h2>
             <div id="cart-items">
@@ -62,4 +123,3 @@
     <script src="/scripts/scripts.js"></script>
 </body>
 </html>
-
