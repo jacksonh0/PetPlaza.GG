@@ -4,122 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetPlaza - Home</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="PetPlaza Logo" class="logo">
+    <!-- Header -->
+    <header>
         <nav>
-            <a href="/home" class="active">Home</a>
-            <a href="/shop">Shop</a>
-            <a href="/about">About Us</a>
-            <a href="/login">Login</a>
+            <div class="logo">
+                <img src="assets/logo.png" alt="PetPlaza Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="icons">
+                <div class="balance" onclick="topUp()">
+                    <span>💰</span> <span id="balance">50.00</span>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
         </nav>
-        <div class="header-icons">
-            <div class="balance" onclick="location.href='/topup.html'">
-                💰 $<span id="balance">0.00</span>
-            </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                🛒 <span id="cart-count">0</span>
-            </div>
-        </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to PetPlaza!</h1>
-                <p>Your one-stop shop for all things *Adopt Me!* Discover the cutest pets and magical items today!</p>
-                <button class="cta-btn" onclick="location.href='/shop'">Explore Shop</button>
-            </div>
-            <div class="hero-image">
-                <img src="/images/hero-pets.png" alt="Cute Pets">
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <h2>Why Choose PetPlaza?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <img src="/images/fast-delivery.png" alt="Fast Delivery">
-                    <h3>Fast Delivery</h3>
-                    <p>Get your items instantly in-game with our automated bot.</p>
-                </div>
-                <div class="feature">
-                    <img src="/images/secure-payments.png" alt="Secure Payments">
-                    <h3>Secure Payments</h3>
-                    <p>Shop confidently with our trusted payment system.</p>
-                </div>
-                <div class="feature">
-                    <img src="/images/community.png" alt="Trusted Community">
-                    <h3>Player Approved</h3>
-                    <p>Join thousands of happy Adopt Me! players.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Popular Items -->
-        <section class="popular-items">
-            <h2>Popular Picks</h2>
-            <div class="items-grid">
-                <div class="item">
-                    <img src="/images/pink-cat.png" alt="Pink Cat">
-                    <h3>Pink Cat</h3>
-                    <p>$9.99</p>
-                    <button onclick="addToCart('Pink Cat', 9.99)">Add to Cart</button>
-                </div>
-                <div class="item">
-                    <img src="/images/blue-dog.png" alt="Blue Dog">
-                    <h3>Blue Dog</h3>
-                    <p>$7.99</p>
-                    <button onclick="addToCart('Blue Dog', 7.99)">Add to Cart</button>
-                </div>
-                <div class="item">
-                    <img src="/images/golden-dragon.png" alt="Golden Dragon">
-                    <h3>Golden Dragon</h3>
-                    <p>$19.99</p>
-                    <button onclick="addToCart('Golden Dragon', 19.99)">Add to Cart</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials">
-            <h2>What Players Say</h2>
-            <div class="testimonial">
-                <p>"PetPlaza made getting my dream pet so easy! Love it!"</p>
-                <span>- Amy L.</span>
-            </div>
-            <div class="testimonial">
-                <p>"The delivery bot is super quick! Highly recommend."</p>
-                <span>- James D.</span>
-            </div>
-        </section>
-    </main>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-overlay" id="cart-overlay">
-        <div class="cart-content">
-            <h2>Your Cart</h2>
-            <div id="cart-items">
-                <p>Your cart is empty!</p>
-            </div>
-            <button class="checkout-btn">Checkout</button>
-            <button class="close-cart" onclick="toggleCart()">Close</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to PetPlaza!</h1>
+            <p>Your one-stop shop for all things adorable. Shop for exclusive in-game pets and items today!</p>
+            <a href="shop.html" class="cta">Shop Now</a>
         </div>
-    </div>
+        <div class="hero-image">
+            <img src="assets/hero-image.png" alt="Cute Pets">
+        </div>
+    </section>
 
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <h2>Featured Pets</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="assets/pink-cat.png" alt="Pink Cat">
+                <h3>Pink Cat</h3>
+                <p>$10.00</p>
+                <button onclick="addToCart('Pink Cat', 10)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/golden-dog.png" alt="Golden Dog">
+                <h3>Golden Dog</h3>
+                <p>$15.00</p>
+                <button onclick="addToCart('Golden Dog', 15)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/blue-bird.png" alt="Blue Bird">
+                <h3>Blue Bird</h3>
+                <p>$12.00</p>
+                <button onclick="addToCart('Blue Bird', 12)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About PetPlaza</h2>
+        <p>
+            At PetPlaza, we bring joy to gamers by offering a wide selection of in-game pets, items, and
+            currencies. Join our community of gamers and animal lovers today!
+        </p>
+        <img src="assets/about-image.png" alt="About Us">
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>“The cutest pets ever! My daughter loves her Pink Cat. Highly recommend PetPlaza!”</p>
+            <strong>– Sarah</strong>
+        </div>
+        <div class="testimonial">
+            <p>“Easy process and great customer support. My pet collection has grown so much!”</p>
+            <strong>– Mike</strong>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <h3>How do I receive my purchased items?</h3>
+            <p>Items are delivered to your account via our in-game trade bot. It’s fast and secure!</p>
+        </div>
+        <div class="faq">
+            <h3>What payment methods are accepted?</h3>
+            <p>We accept all major credit cards and online payment platforms.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us via email at <a href="mailto:support@petplaza.gg">support@petplaza.gg</a>.</p>
+        <img src="assets/contact-image.png" alt="Contact Us">
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 PetPlaza. All rights reserved.</p>
-        <nav>
-            <a href="/terms">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/about">About Us</a>
-        </nav>
     </footer>
 
-    <script src="/scripts/scripts.js"></script>
+    <!-- Cart Sidebar -->
+    <div id="cart-overlay" class="cart-overlay hidden">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
 </body>
 </html>
