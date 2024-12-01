@@ -7,8 +7,6 @@
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/maintenance.html", "destination": "/maintenance", "permanent": true }
   ],
-  "headers": [],
-  "trailingSlash": false,
-  "errorPage": "/404.html"
+  "trailingSlash": false
 }
 
