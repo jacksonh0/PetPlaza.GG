@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/shop", "dest": "/shop.html" },
-    { "src": "/topup", "dest": "/topup.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/maintenance", "dest": "/maintenance.html" },
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/shop.html", "destination": "/shop", "permanent": true },
+    { "source": "/topup.html", "destination": "/topup", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/maintenance.html", "destination": "/maintenance", "permanent": true }
   ],
-  "cleanUrls": true
+  "headers": [],
+  "trailingSlash": false,
+  "errorPage": "/404.html"
 }
 
