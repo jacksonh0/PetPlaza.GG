@@ -5,15 +5,9 @@
     { "src": "/shop", "dest": "/shop.html" },
     { "src": "/topup", "dest": "/topup.html" },
     { "src": "/about", "dest": "/about.html" },
-    { "src": "/404", "dest": "/404.html" },
     { "src": "/maintenance", "dest": "/maintenance.html" },
     { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ],
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/shop.html", "destination": "/shop" },
-    { "source": "/topup.html", "destination": "/topup" },
-    { "source": "/about.html", "destination": "/about" },
-    { "source": "/maintenance.html", "destination": "/maintenance" }
-  ]
+  "cleanUrls": true
 }
+
