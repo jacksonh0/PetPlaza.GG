@@ -4,86 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - PetPlaza</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa1zY+V1u8YoDxV8tWTz4guhG+6PaYZhA/M9A6pR8Lk5qGpG1jJ63u9P9xg" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" type="image/webp">
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-light py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="PetPlaza Logo"></a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="shop.html" class="nav-link active">Shop</a></li>
-                    <li class="nav-item"><a href="topup.html" class="nav-link">Top Up</a></li>
-                </ul>
-            </nav>
-            <div class="icons d-flex align-items-center">
-                <div class="balance-icon me-3" onclick="toggleBalance()">
-                    <span>💰</span> <span id="balance">$50.00</span>
-                </div>
-                <div class="cart-icon" onclick="toggleCart()">
-                    <span>🛒</span> <span id="cart-count">0</span>
-                </div>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop" class="active">Shop</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Main Section -->
-    <main class="shop-container container mt-5">
-        <section class="hero text-center mb-5">
+    <!-- Shop Content -->
+    <main>
+        <section class="shop-container">
             <h1>Shop Items</h1>
-            <p class="lead">Discover exclusive items for your adventures in PetPlaza!</p>
-        </section>
-
-        <section class="items-grid row g-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/item1.png" class="card-img-top" alt="Pink Cat R">
-                    <div class="card-body text-center">
-                        <h2 class="card-title">Pink Cat R</h2>
-                        <p class="card-text">$10.00</p>
-                        <button class="btn btn-primary" onclick="addToCart({name: 'Pink Cat R', price: 10})">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/item2.png" class="card-img-top" alt="Golden Dog">
-                    <div class="card-body text-center">
-                        <h2 class="card-title">Golden Dog</h2>
-                        <p class="card-text">$20.00</p>
-                        <button class="btn btn-primary" onclick="addToCart({name: 'Golden Dog', price: 20})">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/item3.png" class="card-img-top" alt="Rare Hamster">
-                    <div class="card-body text-center">
-                        <h2 class="card-title">Rare Hamster</h2>
-                        <p class="card-text">$15.00</p>
-                        <button class="btn btn-primary" onclick="addToCart({name: 'Rare Hamster', price: 15})">Add to Cart</button>
-                    </div>
+            <div class="items-grid">
+                <div class="shop-item">
+                    <img src="https://res.cloudinary.com/dpvdbeteu/image/upload/v1732931776/petplazalogo_vt6ina.webp" alt="Pink Cat R">
+                    <h2>Pink Cat R</h2>
+                    <p>$10.00</p>
+                    <button onclick="addToCart('Pink Cat R', 10)">Add to Cart</button>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-light py-4 text-center">
-        <p>&copy; 2024 PetPlaza. All rights reserved.</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-qY6a95Fcf0f7TQ9qEsFB4URFcwhpebUIbWQUYhyqubCynx0ASmF3gMJq7RsO7px9" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA7HepYVjhH5RR9pbH4d6ZLF5F/7xQp1phtCTAPKaDOjm8" crossorigin="anonymous"></script>
-    <script src="scripts/scripts.js"></script>
 </body>
 </html>
-
