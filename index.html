@@ -3,166 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetPlaza - Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Home - PetPlaza</title>
+    
+    <!-- Bootstrap CSS via jsDelivr CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJrZ0x3y9PY6wexwZriKjCqkwH2wT9g2L1c4fqFISptx5zDZT0fE9kPpkF8" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa1zY+V1u8YoDxV8tWTz4guhG+6PaYZhA/M9A6pR8Lk5qGpG1jJ63u9P9xg" crossorigin="anonymous">
 </head>
-<body>
+<body class="home">
+
     <!-- Header -->
-    <header class="bg-light py-3 shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <img src="assets/logo.png" alt="PetPlaza Logo" class="img-fluid" style="max-height: 50px;">
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a href="/home" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="/shop" class="nav-link">Shop</a></li>
-                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="d-flex align-items-center">
-                <div class="balance me-3" onclick="topUp()">
-                    <span>💰</span> <span id="balance">0.00</span>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="PetPlaza Logo" class="img-fluid" style="max-height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="cart-icon" onclick="toggleCart()">
-                    🛒 <span id="cart-count">0</span>
-                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero bg-primary text-white py-5">
-        <div class="container d-flex flex-column-reverse flex-md-row align-items-center justify-content-between">
-            <div class="hero-text text-center text-md-start">
-                <h1>Welcome to PetPlaza!</h1>
-                <p class="lead">Your one-stop shop for all things adorable. Shop for exclusive in-game pets and items today!</p>
-                <a href="shop.html" class="btn btn-warning btn-lg">Shop Now</a>
-            </div>
-            <div class="hero-image text-center">
-                <img src="assets/hero-image.png" alt="Cute Pets" class="img-fluid" style="max-height: 300px;">
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products py-5">
+    <section class="hero text-center py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Featured Pets</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/pink-cat.png" class="card-img-top" alt="Pink Cat">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Pink Cat</h3>
-                            <p class="card-text">$10.00</p>
-                            <button class="btn btn-primary" onclick="addToCart('Pink Cat', 10)">Add to Cart</button>
+            <h1 class="display-3 fw-bold">Welcome to PetPlaza!</h1>
+            <p class="lead">Your one-stop shop for all things adorable. Shop for exclusive in-game pets, accessories, and more today!</p>
+            <a href="shop.html" class="btn btn-warning btn-lg mt-4">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Items Carousel -->
+    <section class="featured-items py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-4 mb-4">Featured Items</h2>
+            <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/item1.jpg" class="d-block w-100" alt="Exclusive Pet">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Exclusive Pet</h5>
+                            <p>Get this rare pet for your collection today!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/item2.jpg" class="d-block w-100" alt="Rare Accessory">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Rare Accessory</h5>
+                            <p>Equip your pets with this stunning accessory!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/item3.jpg" class="d-block w-100" alt="Special Pet">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Special Pet</h5>
+                            <p>A must-have pet for any collector.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/golden-dog.png" class="card-img-top" alt="Golden Dog">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Golden Dog</h3>
-                            <p class="card-text">$15.00</p>
-                            <button class="btn btn-primary" onclick="addToCart('Golden Dog', 15)">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/blue-bird.png" class="card-img-top" alt="Blue Bird">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Blue Bird</h3>
-                            <p class="card-text">$12.00</p>
-                            <button class="btn btn-primary" onclick="addToCart('Blue Bird', 12)">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section py-5 bg-light">
+    <!-- How it Works Section -->
+    <section class="how-it-works py-5">
         <div class="container text-center">
-            <h2>About PetPlaza</h2>
-            <p class="lead">
-                At PetPlaza, we bring joy to gamers by offering a wide selection of in-game pets, items, and
-                currencies. Join our community of gamers and animal lovers today!
-            </p>
-            <img src="assets/about-image.png" alt="About Us" class="img-fluid" style="max-height: 300px;">
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials py-5">
-        <div class="container text-center">
-            <h2>What Our Customers Say</h2>
+            <h2 class="display-4 mb-4">How It Works</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <p>“The cutest pets ever! My daughter loves her Pink Cat. Highly recommend PetPlaza!”</p>
-                        <strong>– Sarah</strong>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/how1.jpg" class="card-img-top" alt="Browse">
+                        <div class="card-body">
+                            <h5 class="card-title">Browse Our Shop</h5>
+                            <p class="card-text">Explore our collection of exclusive in-game items, pets, and more.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <p>“Easy process and great customer support. My pet collection has grown so much!”</p>
-                        <strong>– Mike</strong>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/how2.jpg" class="card-img-top" alt="Add to Cart">
+                        <div class="card-body">
+                            <h5 class="card-title">Add to Cart</h5>
+                            <p class="card-text">Simply add the items you love to your cart for easy checkout.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/how3.jpg" class="card-img-top" alt="Complete Purchase">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Your Purchase</h5>
+                            <p class="card-text">Securely check out and get your items delivered directly to you!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="faq-section py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            How do I receive my purchased items?
-                        </button>
-                    </h3>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Items are delivered to your account via our in-game trade bot. It’s fast and secure!
-                        </div>
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-4 mb-4">What Our Customers Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p class="lead">"PetPlaza has the best in-game items! I found everything I needed to make my pets look amazing!"</p>
+                        <footer>- Sarah, Happy Customer</footer>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead">"Fast and easy shopping experience. The checkout process was smooth and hassle-free!"</p>
+                        <footer>- John, Game Enthusiast</footer>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead">"Great service and excellent customer support. I'll definitely shop here again!"</p>
+                        <footer>- Emily, Gamer</footer>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            What payment methods are accepted?
-                        </button>
-                    </h3>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We accept all major credit cards and online payment platforms.
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-center py-4">
         <p>&copy; 2024 PetPlaza. All rights reserved.</p>
+        <p>
+            <a href="/terms" class="text-muted">Terms of Service</a> | 
+            <a href="/privacy" class="text-muted">Privacy Policy</a>
+        </p>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-qY6a95Fcf0f7TQ9qEsFB4URFcwhpebUIbWQUYhyqubCynx0ASmF3gMJq7RsO7px9" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA7HepYVjhH5RR9pbH4d6ZLF5F/7xQp1phtCTAPKaDOjm8" crossorigin="anonymous"></script>
-    <script src="scripts/scripts.js"></script>
+    <!-- Bootstrap JS and dependencies via jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybY7tmjD7v5u4TtDZY2Rve5tIQpU1du2L4g4kghUlX3f9f5fG5" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0G3K1s2/xp8Xue0p9fX7x+2T2FmbTKmO4v8HZh6zd8JdhzY1" crossorigin="anonymous"></script>
+
 </body>
 </html>
