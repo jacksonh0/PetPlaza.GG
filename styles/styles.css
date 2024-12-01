@@ -1,15 +1,15 @@
-/* Global Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
 
 a {
@@ -17,220 +17,235 @@ a {
     color: inherit;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header, footer {
-    background-color: #ff9900;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
-}
-
-header a, footer a {
-    color: white;
-}
-
-h1, h2, h3 {
-    font-family: 'Helvetica', sans-serif;
-    margin-bottom: 15px;
-}
-
-/* Common for all Pages */
+/* Header */
 header {
-    background-color: #ff9900;
-}
-
-footer {
-    background-color: #ff9900;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-top: 20px;
-}
-
-p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Button Styles */
-button, a.cta {
-    background-color: #ff9900;
+    background-color: #0056b3;
     color: white;
-    padding: 12px 20px;
-    text-align: center;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff9100;
+}
+
+header .icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header .icons div {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-button:hover, a.cta:hover {
-    background-color: #e68900;
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0056b3, #ff9100);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
-/* Terms Page Styles */
-body.terms {
-    background-color: #f0f4f8;
-}
-
-h1.terms {
-    color: #3b3e66;
-}
-
-ul.terms {
-    margin: 20px 0;
-    padding-left: 20px;
-}
-
-ul.terms li {
-    margin: 10px 0;
-}
-
-/* Privacy Page Styles */
-body.privacy {
-    background-color: #f9f9f9;
-}
-
-header.privacy {
-    background-color: #45a29e;
-}
-
-footer.privacy {
-    background-color: #45a29e;
-}
-
-h1.privacy {
-    color: #45a29e;
-    font-size: 2.5rem;
-    margin-top: 20px;
-}
-
-/* Home Page Styles */
-body.home {
-    background-color: #fff7e6;
-}
-
-h1.home {
-    color: #ff9900;
+.hero h1 {
     font-size: 3rem;
-    text-align: center;
-    margin-top: 50px;
+    margin-bottom: 1rem;
 }
 
-p.home {
-    color: #333;
-    text-align: center;
+.hero p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
-/* Shop Page Styles */
-body.shop {
-    background-color: #fff7e6;
+.hero .cta {
+    background-color: white;
+    color: #0056b3;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero .cta:hover {
+    background-color: #ff9100;
+    color: white;
+}
+
+/* Shop Items */
+.shop-container {
+    padding: 2rem;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
 .shop-item {
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: white;
+    padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.shop-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .shop-item img {
     max-width: 100%;
     border-radius: 10px;
-    margin-bottom: 15px;
+}
+
+.shop-item h2 {
+    margin: 1rem 0;
+    color: #0056b3;
+}
+
+.shop-item p {
+    color: #ff9100;
+    font-weight: bold;
 }
 
 .shop-item button {
-    background-color: #ff9900;
+    background-color: #0056b3;
     color: white;
+    padding: 0.75rem 1.5rem;
     border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
     transition: background-color 0.3s;
 }
 
 .shop-item button:hover {
-    background-color: #e68900;
+    background-color: #ff9100;
 }
 
-/* Login Page Styles */
-body.login {
-    background-color: #f0f4f8;
-}
-
-header.login {
-    background-color: #3b3e66;
-}
-
-footer.login {
-    background-color: #3b3e66;
-}
-
-h1.login {
-    color: #3b3e66;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 50px;
-}
-
-form.login {
+/* Login Page */
+.login-container {
     max-width: 400px;
-    margin: 30px auto;
-    background-color: #ffffff;
-    padding: 30px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button[type="submit"] {
-    background-color: #ff9900;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-button[type="submit"]:hover {
-    background-color: #e68900;
-}
-
-a {
-    color: #3b3e66;
     text-align: center;
-    display: block;
-    margin-top: 20px;
 }
 
-a:hover {
-    text-decoration: underline;
+.login-container h1 {
+    margin-bottom: 2rem;
+    color: #0056b3;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #ff9100;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* 404 Page */
+.error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-container h1 {
+    font-size: 4rem;
+    color: #ff9100;
+}
+
+.error-container p {
+    margin: 1rem 0;
+    color: #333;
+}
+
+.error-container a {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.error-container a:hover {
+    background-color: #ff9100;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .shop-container {
+        padding: 1rem;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
 }
