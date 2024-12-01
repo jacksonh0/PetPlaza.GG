@@ -6,6 +6,7 @@
         { "source": "/login", "destination": "/login.html" },
         { "source": "/privacy", "destination": "/privacy.html" },
         { "source": "/terms", "destination": "/terms.html" },
-        { "source": "/(.*)", "destination": "/404.html" }
+        { "source": "/(.*)", "destination": "/404.html" },
+        { "source": "/topup", "destination": "/topup.html" }
     ]
 }
